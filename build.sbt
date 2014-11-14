@@ -1,3 +1,5 @@
+scalaVersion := "2.11.4"
+
 wartremoverErrors ++= Seq(
   Wart.Any,
   Wart.Any2StringAdd,
@@ -22,5 +24,3 @@ scalacOptions ++= Seq(
   "-Ywarn-value-discard",
   "-Xfuture"
 )
-
-
