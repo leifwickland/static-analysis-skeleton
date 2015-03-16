@@ -12,15 +12,15 @@ wartremoverErrors ++= Seq(
 )
 
 scalacOptions ++= Seq(
-  "-deprecation",           
+  "-deprecation",
   "-encoding", "UTF-8",       // yes, this is 2 args
-  "-feature",                
+  "-feature",
   "-unchecked",
-  "-Xfatal-warnings",       
+  "-Xfatal-warnings",
   "-Xlint",
-  "-Yno-adapted-args",       
+  "-Yno-adapted-args",
   "-Ywarn-dead-code",        // N.B. doesn't work well with the ??? hole
-  "-Ywarn-numeric-widen",   
+  "-Ywarn-numeric-widen",
   "-Ywarn-value-discard",
   "-Xfuture"
 )
