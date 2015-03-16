@@ -1,5 +1,10 @@
 scalaVersion := "2.11.6"
 
+// Apply default Scalariform formatting. 
+// Reformat at every compile. 
+// c.f. https://github.com/sbt/sbt-scalariform#advanced-configuration for more options.
+scalariformSettings
+
 wartremoverErrors ++= Seq(
   Wart.Any,
   Wart.Any2StringAdd,
