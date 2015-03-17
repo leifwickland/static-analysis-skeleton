@@ -5,6 +5,8 @@ scalaVersion := "2.11.6"
 // c.f. https://github.com/sbt/sbt-scalariform#advanced-configuration for more options.
 scalariformSettings
 
+scalastyleFailOnError := true
+
 scalacOptions ++= Seq(
   "-deprecation",
   "-encoding", "UTF-8", // yes, this is 2 args
