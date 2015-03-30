@@ -107,7 +107,7 @@ def removeFoursquareLinterFromCompileTarget = {
   // We call addCompilerPlugin in project/plugins.sbt to add a depenency on the foursquare linter so that sbt magically
   // manages the JAR for us.  Unfortunately, addCompilerPlugin also adds a switch to scalacOptions in the Compile config
   // to load the plugin.
-  // The bit below removes all switches that could be passed to scalac about WartRemover during a non-lint compile.
+  // The bit below removes all switches that could be passed to scalac about Foursquare Linter during a non-lint compile.
   scalacOptions in Compile := (scalacOptions in Compile).value filterNot { switch =>
     switch.startsWith("-P:linter:") ||
       "^-Xplugin:.*/com[.]foursquare[.]lint/.*linter.*[.]jar$".r.pattern.matcher(switch).find
