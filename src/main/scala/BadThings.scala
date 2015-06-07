@@ -9,7 +9,7 @@ object BadThings {
   // val deprecationExample = Seq(1, 2, 3).toSet()
 
   // When uncommented, this line will be identifed as an unintentional string concatenation by WartRemover
-  // val wartRemoverExample = Seq(1, 2) :+ 3
+  // val wartRemoverExample = Seq(1, 2) + 3
 
   // When uncommented this line will be identified as a bad idea by Foursquare Linter
   // val fourSquareLinterExample = Array(1,2,3).toString
