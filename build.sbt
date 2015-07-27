@@ -93,8 +93,7 @@ def removeWartRemoverFromCompileTarget = {
 
 def addFoursquareLinterToLintTarget = {
   Seq(
-    resolvers += "Linter Repository" at "https://hairyfotr.github.io/linteRepo/releases",
-    addCompilerPlugin("com.foursquare.lint" %% "linter" % "0.1.9"),
+    addCompilerPlugin("org.psywerx.hairyfotr" %% "linter" % "0.1.12"),
     // See https://github.com/HairyFotr/linter#list-of-implemented-checks for a list of checks that foursquare linter
     // implements
     // By default linter enables all checks.
@@ -110,6 +109,6 @@ def removeFoursquareLinterFromCompileTarget = {
   // The bit below removes all switches that could be passed to scalac about Foursquare Linter during a non-lint compile.
   scalacOptions in Compile := (scalacOptions in Compile).value filterNot { switch =>
     switch.startsWith("-P:linter:") ||
-      "^-Xplugin:.*/com[.]foursquare[.]lint/.*linter.*[.]jar$".r.pattern.matcher(switch).find
+      "^-Xplugin:.*/org[.]psywerx[.]hairyfotr/.*linter.*[.]jar$".r.pattern.matcher(switch).find
   }
 }
