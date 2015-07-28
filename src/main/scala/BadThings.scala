@@ -2,8 +2,8 @@
 // import scala.MatchError
 
 object BadThings {
-  // When uncommented, this line will be identified as inferring any by the -Xlint scalac switches
-  // val xLintExample = Seq(1 -> 2, 2 -> "3")
+  // When uncommented, this line will be identified as inferring any by the -Xlint scalac switches when running `compile`.
+  // val xLintExample = Seq(1, 2, "3")
 
   // When uncommented this line will be identified as a compiler error because of -deprecation and -Xfatal-warnings
   // val deprecationExample = Seq(1, 2, 3).toSet()
