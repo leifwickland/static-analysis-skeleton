@@ -1,4 +1,4 @@
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7"
 
 // Apply default Scalariform formatting. 
 // Reformat at every compile. 
