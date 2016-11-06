@@ -1,4 +1,4 @@
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
 // Apply default Scalariform formatting. 
 // Reformat at every compile. 
@@ -32,9 +32,9 @@ addWartRemoverToLintTarget
 
 removeWartRemoverFromCompileTarget 
 
-addFoursquareLinterToLintTarget 
+addPsywerxLinterToLintTarget 
 
-removeFoursquareLinterFromCompileTarget 
+removePsywerxLinterFromCompileTarget 
 
 def addMainSourcesToLintTarget = {
   inConfig(LintTarget) {
@@ -91,9 +91,9 @@ def removeWartRemoverFromCompileTarget = {
   }
 }
 
-def addFoursquareLinterToLintTarget = {
+def addPsywerxLinterToLintTarget = {
   Seq(
-    addCompilerPlugin("org.psywerx.hairyfotr" %% "linter" % "0.1.12"),
+    addCompilerPlugin("org.psywerx.hairyfotr" %% "linter" % "0.1.16"),
     // See https://github.com/HairyFotr/linter#list-of-implemented-checks for a list of checks that foursquare linter
     // implements
     // By default linter enables all checks.
@@ -102,11 +102,11 @@ def addFoursquareLinterToLintTarget = {
   )
 }
 
-def removeFoursquareLinterFromCompileTarget = {
+def removePsywerxLinterFromCompileTarget = {
   // We call addCompilerPlugin in project/plugins.sbt to add a depenency on the foursquare linter so that sbt magically
   // manages the JAR for us.  Unfortunately, addCompilerPlugin also adds a switch to scalacOptions in the Compile config
   // to load the plugin.
-  // The bit below removes all switches that could be passed to scalac about Foursquare Linter during a non-lint compile.
+  // The bit below removes all switches that could be passed to scalac about Psywerx Linter during a non-lint compile.
   scalacOptions in Compile := (scalacOptions in Compile).value filterNot { switch =>
     switch.startsWith("-P:linter:") ||
       "^-Xplugin:.*/org[.]psywerx[.]hairyfotr/.*linter.*[.]jar$".r.pattern.matcher(switch).find
